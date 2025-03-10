@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L73-Wp-gVR">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="B3u-no-ci9">
-                                <rect key="frame" x="32" y="212.66666666666663" width="326" height="177.33333333333337"/>
+                                <rect key="frame" x="32" y="278.66666666666669" width="326" height="177.33333333333331"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dpV-2a-UJO">
                                         <rect key="frame" x="0.0" y="0.0" width="326" height="34"/>
@@ -27,17 +27,20 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartInsertDeleteType="no" textContentType="username"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="emQ-KZ-1MS">
-                                        <rect key="frame" x="0.0" y="50.000000000000028" width="326" height="34"/>
+                                        <rect key="frame" x="0.0" y="50" width="326" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxQ-by-v6p">
-                                        <rect key="frame" x="0.0" y="100.00000000000003" width="326" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="100" width="326" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Log In"/>
+                                        <connections>
+                                            <action selector="LoginBtnAcion" destination="BYZ-38-t0r" eventType="touchUpInside" id="QUW-Mr-LmM"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Myb-0C-4bL">
-                                        <rect key="frame" x="0.0" y="150.33333333333334" width="326" height="27"/>
+                                        <rect key="frame" x="0.0" y="150.33333333333331" width="326" height="27"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrt-cx-GDm">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="27"/>
@@ -46,6 +49,9 @@
                                                 <state key="normal" title="Forgot User Name?">
                                                     <color key="titleColor" systemColor="linkColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="ForgotLoginBtnAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="mqf-PM-YNp"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AId-G4-DZN">
                                                 <rect key="frame" x="225" y="0.0" width="101" height="27"/>
@@ -54,6 +60,9 @@
                                                 <state key="normal" title="Forgot Password?">
                                                     <color key="titleColor" systemColor="linkColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="ForgotPasswordBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uno-hy-R0v"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -68,9 +77,32 @@
                             <constraint firstItem="B3u-no-ci9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" multiplier="3:2" constant="142" id="jna-4Z-WcY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8CN-kd-DYY"/>
+                    <connections>
+                        <outlet property="loginInput" destination="dpV-2a-UJO" id="yMq-tq-K76"/>
+                        <outlet property="passwordInput" destination="emQ-KZ-1MS" id="jS8-sw-Y6J"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1058.4615384615383" y="-27.72511848341232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2hV-Wf-SGW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L73-Wp-gVR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BAW-Xi-H3v">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="s69-SU-cIn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8l-vo-ftB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129.23076923076923" y="-27.72511848341232"/>
         </scene>
     </scenes>
     <resources>
