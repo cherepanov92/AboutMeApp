@@ -35,7 +35,6 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Log In"/>
                                         <connections>
-                                            <action selector="unwindFor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="orO-z2-sTw"/>
                                             <segue destination="whN-li-xF9" kind="presentation" modalPresentationStyle="fullScreen" id="6Gv-r7-6cK"/>
                                         </connections>
                                     </button>
@@ -118,7 +117,7 @@
                                 <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logoutBtnAction" destination="whN-li-xF9" eventType="touchUpInside" id="C8A-jF-be7"/>
-                                    <segue destination="wIH-v2-fOg" kind="unwind" unwindAction="unwindFor:" id="Yeh-ge-plg"/>
+                                    <segue destination="wIH-v2-fOg" kind="unwind" unwindAction="unwindFor:" id="cl1-Ex-YNJ"/>
                                 </connections>
                             </button>
                         </subviews>
