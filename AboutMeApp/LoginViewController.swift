@@ -7,11 +7,11 @@
 
 import UIKit
 
+// MARK: constants
 let LOGIN = "Admin"
 let PASSWORD = "Admin"
 
 final class LoginViewController: UIViewController {
-    
     // MARK: IBOutlets
     @IBOutlet var loginInput: UITextField!
     @IBOutlet var passwordInput: UITextField!
@@ -20,28 +20,37 @@ final class LoginViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-    // MARK: IBActions
-    @IBAction func LoginBtnAcion() {
-        guard let login = loginInput.text, !login.isEmpty else { return }
-        guard let password = passwordInput.text, !password.isEmpty else { return }
-        
-        if login == LOGIN && password == PASSWORD {
-            print("LOGIN SUCSESS")
-        } else {
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard loginInput.text == LOGIN, passwordInput.text == PASSWORD else {
             showWrongAuthAlert()
+            return false
         }
+        
+        return true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let welcomeViewController = segue.destination as? WelcomeViewController
+        
+        welcomeViewController?.userName = loginInput.text
+    }
+    
+    // MARK: IBActions
     @IBAction func ForgotLoginBtnAction() {
         showAlert(withTitle: "User name", andMessage: "Admin")
     }
     
-    @IBAction func ForgotPasswordBtnAction(_ sender: Any) {
+    @IBAction func ForgotPasswordBtnAction() {
         showAlert(withTitle: "Password", andMessage: "Admin")
     }
     
-    // MARK: proivate methods    
+    @IBAction func unwind(for _: UIStoryboardSegue) {
+        loginInput.text = nil
+        passwordInput.text = nil
+    }
+    
+    // MARK: private methods
     private func showWrongAuthAlert() {
         showAlert(withTitle: "Login fail", andMessage: "Wrong login or password")
     }
