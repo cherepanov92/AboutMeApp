@@ -7,26 +7,31 @@
 
 import UIKit
 
-// MARK: constants
-let LOGIN = "Admin"
-let PASSWORD = "Admin"
-
 final class LoginViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet var loginInput: UITextField!
     @IBOutlet var passwordInput: UITextField!
     
+    private let login = "Admin"
+    private let password = "Admin"
+    
     // MARK: overrides
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard loginInput.text == LOGIN, passwordInput.text == PASSWORD else {
-            showWrongAuthAlert()
+        guard loginInput.text == login, passwordInput.text == password else {
+            showAlert(
+                withTitle: "Login fail",
+                andMessage: "Wrong login or password",
+                completion: {
+                    self.passwordInput.text = nil
+                }
+            )
             return false
         }
-        
         return true
     }
     
@@ -38,11 +43,11 @@ final class LoginViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func ForgotLoginBtnAction() {
-        showAlert(withTitle: "User name", andMessage: "Admin")
+        showAlert(withTitle: "User name", andMessage: login)
     }
     
     @IBAction func ForgotPasswordBtnAction() {
-        showAlert(withTitle: "Password", andMessage: "Admin")
+        showAlert(withTitle: "Password", andMessage: password)
     }
     
     @IBAction func unwind(for _: UIStoryboardSegue) {
@@ -51,13 +56,10 @@ final class LoginViewController: UIViewController {
     }
     
     // MARK: private methods
-    private func showWrongAuthAlert() {
-        showAlert(withTitle: "Login fail", andMessage: "Wrong login or password")
-    }
-    
     private func showAlert(
         withTitle title: String,
-        andMessage message: String
+        andMessage message: String,
+        completion: (() -> Void)? = nil
     ) {
         let alert = UIAlertController(
             title: title,
@@ -65,7 +67,12 @@ final class LoginViewController: UIViewController {
             preferredStyle: .alert
         )
         
-        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        let okAction = UIAlertAction(
+            title: "OK",
+            style: .cancel
+        ) { _ in
+            completion?()
+        }
         
         alert.addAction(okAction)
         present(alert, animated: true)
