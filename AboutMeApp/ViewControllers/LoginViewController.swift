@@ -12,17 +12,24 @@ final class LoginViewController: UIViewController {
     @IBOutlet var loginInput: UITextField!
     @IBOutlet var passwordInput: UITextField!
     
-    private let login = "Admin"
-    private let password = "Admin"
+    private let currentUser = User.getUser()
     
     // MARK: overrides
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        loginInput.text = currentUser.login
+        passwordInput.text = currentUser.password
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard loginInput.text == login, passwordInput.text == password else {
+        guard loginInput.text == currentUser.login, passwordInput.text == currentUser.password else {
             showAlert(
                 withTitle: "Login fail",
                 andMessage: "Wrong login or password",
@@ -38,16 +45,16 @@ final class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let welcomeViewController = segue.destination as? WelcomeViewController
         
-        welcomeViewController?.userName = loginInput.text
+        welcomeViewController?.currentUser = currentUser
     }
     
     // MARK: IBActions
     @IBAction func ForgotLoginBtnAction() {
-        showAlert(withTitle: "User name", andMessage: login)
+        showAlert(withTitle: "User name", andMessage: currentUser.login)
     }
     
     @IBAction func ForgotPasswordBtnAction() {
-        showAlert(withTitle: "Password", andMessage: password)
+        showAlert(withTitle: "Password", andMessage: currentUser.password)
     }
     
     @IBAction func unwind(for _: UIStoryboardSegue) {

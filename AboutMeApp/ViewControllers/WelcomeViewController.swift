@@ -12,14 +12,14 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet var userNameLabel: UILabel!
     
     // MARK: variables
-    var userName: String!
+    var currentUser: User!
     
     // MARK: override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         initViewLayer()
         
-        userNameLabel.text = "Hello, \(userName ?? "user")"
+        userNameLabel.text = "Hello, \(currentUser.login)\n my name is \(currentUser.person.name) \(currentUser.person.surname)"
     }
     
     // MARK: private methods
