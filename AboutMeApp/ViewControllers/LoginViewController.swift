@@ -43,9 +43,18 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeViewController = segue.destination as? WelcomeViewController
+        let tabBarController = segue.destination as? UITabBarController
         
-        welcomeViewController?.currentUser = currentUser
+        tabBarController?.viewControllers?.forEach { viewController in
+            if let welcomeController = viewController as? WelcomeViewController {
+                welcomeController.currentUser = currentUser
+            }
+            
+            if let personalController = viewController as? PersonViewController {
+                personalController.person = currentUser.person
+                personalController.tabBarItem.title = currentUser.person.name
+            }
+        }
     }
     
     // MARK: IBActions
