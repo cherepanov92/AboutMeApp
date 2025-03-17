@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PersonViewController: UIViewController {
+final class PersonViewController: StyledViewController {
 
     @IBOutlet var userInfoLabels: [UILabel]!
     

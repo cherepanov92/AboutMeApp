@@ -16,6 +16,7 @@
 		CE20EF782D8732BB00697BAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20EF772D8732BB00697BAE /* User.swift */; };
 		CE616C852D8748E300259D58 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE616C842D8748E300259D58 /* PersonViewController.swift */; };
 		CE9D8A912D88794700E9D54C /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D8A902D88794700E9D54C /* BioViewController.swift */; };
+		CE9D8A932D88818300E9D54C /* StyledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D8A922D88818300E9D54C /* StyledViewController.swift */; };
 		CEF987E32D7F6676002E7602 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF987E22D7F6676002E7602 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		CE20EF772D8732BB00697BAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE616C842D8748E300259D58 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		CE9D8A902D88794700E9D54C /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
+		CE9D8A922D88818300E9D54C /* StyledViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledViewController.swift; sourceTree = "<group>"; };
 		CEF987E22D7F6676002E7602 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				CEF987E22D7F6676002E7602 /* WelcomeViewController.swift */,
 				CE616C842D8748E300259D58 /* PersonViewController.swift */,
 				CE9D8A902D88794700E9D54C /* BioViewController.swift */,
+				CE9D8A922D88818300E9D54C /* StyledViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9D8A912D88794700E9D54C /* BioViewController.swift in Sources */,
+				CE9D8A932D88818300E9D54C /* StyledViewController.swift in Sources */,
 				CE04912A2D7E1B8400762565 /* LoginViewController.swift in Sources */,
 				CEF987E32D7F6676002E7602 /* WelcomeViewController.swift in Sources */,
 				CE0491262D7E1B8400762565 /* AppDelegate.swift in Sources */,

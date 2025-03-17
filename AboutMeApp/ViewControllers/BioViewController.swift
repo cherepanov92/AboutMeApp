@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BioViewController: UIViewController {
+class BioViewController: StyledViewController {
     @IBOutlet var bioLabel: UILabel!
     
     var bioInfo: String!
