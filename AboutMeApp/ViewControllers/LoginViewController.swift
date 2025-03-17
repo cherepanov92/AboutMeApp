@@ -51,10 +51,10 @@ final class LoginViewController: UIViewController {
             }
             
             if let personNavigationController = viewController as? UINavigationController {
-                personNavigationController.tabBarItem.title = currentUser.person.name
                 
                 let personController = personNavigationController.topViewController as? PersonViewController
                 personController?.person = currentUser.person
+                personController?.title = currentUser.person.name
             }
         }
     }

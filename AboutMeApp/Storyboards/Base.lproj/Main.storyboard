@@ -213,20 +213,23 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VUP-5t-P8K"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
                             <constraint firstItem="6UC-BC-R7r" firstAttribute="centerY" secondItem="zNy-aY-ugo" secondAttribute="centerY" id="46k-2u-TVr"/>
                             <constraint firstItem="6UC-BC-R7r" firstAttribute="leading" secondItem="VUP-5t-P8K" secondAttribute="leading" constant="20" id="Idk-Df-yYI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Username" id="gJU-pX-k3L">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="jLx-TP-ZYC">
+                        <barButtonItem key="rightBarButtonItem" id="jLx-TP-ZYC">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bCG-yt-L16">
                                 <rect key="frame" x="233" y="7.5" width="71" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Bio"/>
+                                <connections>
+                                    <segue destination="tRX-E6-9Ss" kind="show" id="9nt-KS-aKo"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -240,6 +243,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzL-DC-khk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3997.5" y="277.81690140845069"/>
+        </scene>
+        <!--Bio View Controller-->
+        <scene sceneID="c5E-uS-CtQ">
+            <objects>
+                <viewController id="tRX-E6-9Ss" customClass="BioViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CFy-LK-zb3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zde-8e-Fsu">
+                                <rect key="frame" x="20" y="112.5" width="280" height="386.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vha-Wv-Hpf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vha-Wv-Hpf" firstAttribute="trailing" secondItem="zde-8e-Fsu" secondAttribute="trailing" constant="20" id="2ir-UU-N4q"/>
+                            <constraint firstItem="zde-8e-Fsu" firstAttribute="top" secondItem="Vha-Wv-Hpf" secondAttribute="top" constant="20" id="8va-Ze-T1c"/>
+                            <constraint firstItem="zde-8e-Fsu" firstAttribute="leading" secondItem="Vha-Wv-Hpf" secondAttribute="leading" constant="20" id="XAP-A7-Djo"/>
+                            <constraint firstItem="Vha-Wv-Hpf" firstAttribute="bottom" secondItem="zde-8e-Fsu" secondAttribute="bottom" constant="20" id="cOt-re-IsR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ti8-Qh-Kux"/>
+                    <connections>
+                        <outlet property="bioLabel" destination="zde-8e-Fsu" id="2ET-eK-U7r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GfE-YH-Fg9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4896" y="278"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="m3T-E0-ajT">
@@ -287,14 +323,14 @@
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

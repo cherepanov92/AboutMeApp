@@ -39,6 +39,11 @@ final class PersonViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let bioView = segue.destination as? BioViewController
+        bioView?.bioInfo = person.bio
+    }
+    
     private func getAgeToday(birday: String) -> String {
         let ageNotFound = "не определён"
         let dateFormatter = DateFormatter()
