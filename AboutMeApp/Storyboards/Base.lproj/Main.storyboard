@@ -140,7 +140,7 @@
             </objects>
             <point key="canvasLocation" x="3000" y="-491"/>
         </scene>
-        <!--User-->
+        <!--Username-->
         <scene sceneID="tQK-kK-6Aa">
             <objects>
                 <viewController id="PGm-cS-VGp" customClass="PersonViewController" customModule="AboutMeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -219,7 +219,17 @@
                             <constraint firstItem="6UC-BC-R7r" firstAttribute="leading" secondItem="VUP-5t-P8K" secondAttribute="leading" constant="20" id="Idk-Df-yYI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="User" image="person" catalog="system" id="5xU-ck-drZ"/>
+                    <navigationItem key="navigationItem" title="Username" id="gJU-pX-k3L">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="jLx-TP-ZYC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bCG-yt-L16">
+                                <rect key="frame" x="233" y="7.5" width="71" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Bio"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outletCollection property="userInfoLabels" destination="OOt-WG-YZ9" collectionClass="NSMutableArray" id="b9Z-8F-zjl"/>
                         <outletCollection property="userInfoLabels" destination="Hhg-SW-4aJ" collectionClass="NSMutableArray" id="lDp-5h-b87"/>
@@ -229,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzL-DC-khk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3000" y="278"/>
+            <point key="canvasLocation" x="3997.5" y="277.81690140845069"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="m3T-E0-ajT">
@@ -244,12 +254,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="whN-li-xF9" kind="relationship" relationship="viewControllers" id="lqn-cg-JLR"/>
-                        <segue destination="PGm-cS-VGp" kind="relationship" relationship="viewControllers" id="2ij-Tj-Vya"/>
+                        <segue destination="4kb-ee-oWB" kind="relationship" relationship="viewControllers" id="2ij-Tj-Vya"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="432-H9-7W4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1830" y="-28.52112676056338"/>
+        </scene>
+        <!--User-->
+        <scene sceneID="K2e-SI-ev6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4kb-ee-oWB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="User" image="person" catalog="system" id="5xU-ck-drZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="L1l-iC-53b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PGm-cS-VGp" kind="relationship" relationship="rootViewController" id="AWq-bU-6zf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3y-mX-Uqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3000" y="277.81690140845069"/>
         </scene>
     </scenes>
     <resources>
